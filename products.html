@@ -15,10 +15,11 @@
     <link rel="stylesheet" href="mystyle.css" />
 
     <style>
-        [class=card] img {
-            height: 100px;
-            width: auto;
+        .card {
+            height: auto;
+            width: 20%;
         }
+
     </style>
 </head>
 
@@ -55,49 +56,20 @@
     </header>
 
     <h1 class="display-4" style="text-align: center;">Products</h1>
-    <div class="container">
+    <div class="container" id="productContainer">
         <div class="row">
-            <div class="col">
-                <div class="card">
-                    <img src="./images/mechanix.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Mechanix</h5>
-                        <p class="card-text">Some quick example text</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+            <!--
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/mechanix.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Mechanix</h5>
+                            <p class="card-text">Some quick example text</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="./images/monopoly.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Monopoly</h5>
-                        <p class="card-text">Some quick example text</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="./images/cricketset.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Cricket Set</h5>
-                        <p class="card-text">Some quick example text</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="./images/shuttlekit.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Shuttle Kit</h5>
-                        <p class="card-text">Some quick example text</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            
+            -->
         </div>
     </div>
     <!-- Optional JavaScript -->
@@ -111,6 +83,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+
+    <script src="./js/ProductModule.js"></script>
+    <script src="./js/loadProducts.js"></script>
 </body>
 
 </html>
