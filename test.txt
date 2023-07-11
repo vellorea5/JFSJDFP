@@ -1,0 +1,4 @@
+./images/shuttlekit.jpg
+./images/monopoly.jpg
+./images/cricketset.jpg
+./images/mechanix.jpg

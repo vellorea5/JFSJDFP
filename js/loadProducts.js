@@ -1,29 +1,31 @@
 
 const storageProductList = localStorage.getItem("storageProductList");
-let productList = new ProductList();
 const productContainer = document.querySelector("#productContainer");
 
 if(storageProductList) {
-    productList = JSON.parse(storageProductList);
+    productList.list = JSON.parse(storageProductList);
     renderProducts(productList);
 }
+console.log('stor PL:'+storageProductList);
+
 
 function renderProducts(productList) {
 
     const productCount = productList.list.length;
+    console.log('Product Count:'+productCount);
     const rowCount = Math.floor(productCount / 4) + 1;
     console.log('Row count:'+rowCount);
     
     let code = `<div class="row">`;
     let currentCount = 0;
 
-        productList.list.forEach((product) => {
-            currentCount++;
-            console.log(product.img);
-            console.log(product.name);
-            console.log(product.desc);
+    productList.list.forEach((product) => {
+        currentCount++;
+        console.log('Img:'+product.img);
+        console.log('Name:'+product.name);
+        console.log('Desc:'+product.desc);
 
-            code += 
+        code += 
             `<div class="col">\n
                 <div class="card">\n
                     <img src=${product.img} class="card-img-top"> \n
@@ -35,7 +37,14 @@ function renderProducts(productList) {
                 </div>\n
             </div>\n`;
 
-            if
-        
-        });
+        if(currentCount == 4) {
+            code += 
+                `</div>\n
+                 <div class="row">`;
+            currentCount = 0;
+        }
+    });
+
+    code += `</div>`;
+    productContainer.innerHTML = code;
 }

@@ -1,6 +1,4 @@
 
-
-const productList = new ProductList();
 const prodForm = document.querySelector("#addProduct");
 
 prodForm.addEventListener('submit', (event) => {
@@ -13,6 +11,9 @@ prodForm.addEventListener('submit', (event) => {
     const product = new Product(productName, productDesc, productImg);
 
     productList.addProduct(product);
-    localStorage.setItem("storageProductList", JSON.stringify(productList));
-    console.log(productList.list);
+    localStorage.setItem("storageProductList", JSON.stringify(productList.list));
+    const productCount = productList.list.length;
+    console.log('Product Count:'+productCount);
+    console.log('Product List:'+productList.list);
+    
 });
