@@ -11,19 +11,15 @@ class Product {
 
 class ProductList {
     constructor() {
-        //let storageProductList = localStorage.getItem("storageProductList");
-        //let obj = JSON.parse(storageProductList);
-        //console.log(obj);
-        
-        /*if(obj!=null)
-            this.list = obj;
-        else*/
-            this.list = [];
+        this.mylist = [];
     }
 
     addProduct(product) {
-        this.list.push(product);
+        this.mylist.push(product);
+        ProductList.productCount++;
     }
 }
 
 let productList = new ProductList();
+
+export { Product, productList };

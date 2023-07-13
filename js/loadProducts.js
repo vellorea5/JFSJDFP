@@ -1,31 +1,33 @@
+import { Product, productList } from "./ProductModule.js";
 
-const storageProductList = localStorage.getItem("storageProductList");
-const productContainer = document.querySelector("#productContainer");
+let storageProductList = localStorage.getItem("storageProductList");
+let productContainer = document.querySelector("#productContainer");
 
 if(storageProductList) {
-    productList.list = JSON.parse(storageProductList);
-    renderProducts(productList);
-}
-console.log('stor PL:'+storageProductList);
+    
+    //productList = storageProductList;
+    storageProductList = JSON.parse(storageProductList);
 
+    //console.log("Prod:"+productList);
+    renderProducts(storageProductList);
+}
 
 function renderProducts(productList) {
 
-    const productCount = productList.list.length;
-    console.log('Product Count:'+productCount);
-    const rowCount = Math.floor(productCount / 4) + 1;
+    let productCount = productList.mylist.length;
+    let rowCount = Math.floor(productCount / 4) + 1;
     console.log('Row count:'+rowCount);
     
     let code = `<div class="row">`;
     let currentCount = 0;
 
-    productList.list.forEach((product) => {
-        currentCount++;
-        console.log('Img:'+product.img);
-        console.log('Name:'+product.name);
-        console.log('Desc:'+product.desc);
+        productList.mylist.forEach((product) => {
+            currentCount++;
+            console.log(product.img);
+            console.log(product.name);
+            console.log(product.desc);
 
-        code += 
+            code += 
             `<div class="col">\n
                 <div class="card">\n
                     <img src=${product.img} class="card-img-top"> \n
@@ -36,15 +38,9 @@ function renderProducts(productList) {
                     </div>\n
                 </div>\n
             </div>\n`;
+        
+        });
 
-        if(currentCount == 4) {
-            code += 
-                `</div>\n
-                 <div class="row">`;
-            currentCount = 0;
-        }
-    });
-
-    code += `</div>`;
-    productContainer.innerHTML = code;
+        code += `</div>`;
+        productContainer.innerHTML = code;
 }
