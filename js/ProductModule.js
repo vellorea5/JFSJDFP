@@ -11,7 +11,11 @@ class Product {
 
 class ProductList {
     constructor() {
-        this.mylist = [];
+        let productList = localStorage.getItem("storageProductList");
+        if(productList)
+            this.mylist = productList.mylist;
+        else
+            this.mylist = [];
     }
 
     addProduct(product) {
